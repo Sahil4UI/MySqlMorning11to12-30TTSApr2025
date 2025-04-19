@@ -1,0 +1,144 @@
+FBMS - File Based Management System
+DBMS - Data Base Management System-
+MYSQL - it is a tool based on SQL Language
+SQL=>Structured Query Language
+Types of Statements:
+1.DDL - Data Definition Language
+create,alter(column-add/remove/change/rename),drop
+
+2.DML - Data Manipulation Language
+insert,update,delete
+
+3.DCL - Data Control Language
+Select Statement ……
+4.TCL - Transaction Control Language
+Commit,rollback,savepoint
+
+MYSQL Installation:
+
+Why MYSQL?
+it is used as storage in various apps like
+mobile app and web apps and desktop apps.
+
+MYSQL can handle large amount of data easily
+
+
+—————————————
+How to create database ? 
+create database school;
+
+How to use Database?
+use school;
+
+How to create table in database?
+create table students (roll int primary key,name text,marks int);
+
+How to insert data in table?
+insert into students values
+    (101,"ravi",90),
+    (102,"ram",99),
+    (103,"harish",60),
+    (104,"yash",50);
+
+How to view Table Structure?
+describe students;
+
+How to view table?
+mysql> select * from students;
++------+--------+-------+
+| roll | name   | marks |
++------+--------+-------+
+|  101 | ravi   |    90 |
+|  102 | ram    |    99 |
+|  103 | harish |    60 |
+|  104 | yash   |    50 |
++------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where roll = 101;
++------+------+-------+
+| roll | name | marks |
++------+------+-------+
+|  101 | ravi |    90 |
++------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> select roll,name  from students where roll = 101;
++------+------+
+| roll | name |
++------+------+
+|  101 | ravi |
++------+------+
+1 row in set (0.01 sec)
+
+
+————————————————————————————
+Last login: Wed Apr 16 14:39:56 on console
+sahilkumar@SAHILs-MacBook-Air ~ %   mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 9.2.0 Homebrew
+
+Copyright (c) 2000, 2025, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database school;
+Query OK, 1 row affected (0.07 sec)
+
+mysql> use school;
+Database changed
+mysql> 
+mysql> create table students (roll int primary key,name text,marks int);
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> insert into students values
+    -> (101,"ravi",90),
+    -> (102,"ram",99),
+    -> (103,"harish",60),
+    -> (104,"yash",50);
+Query OK, 4 rows affected (0.04 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> describe students;
++-------+------+------+-----+---------+-------+
+| Field | Type | Null | Key | Default | Extra |
++-------+------+------+-----+---------+-------+
+| roll  | int  | NO   | PRI | NULL    |       |
+| name  | text | YES  |     | NULL    |       |
+| marks | int  | YES  |     | NULL    |       |
++-------+------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> select * from students;
++------+--------+-------+
+| roll | name   | marks |
++------+--------+-------+
+|  101 | ravi   |    90 |
+|  102 | ram    |    99 |
+|  103 | harish |    60 |
+|  104 | yash   |    50 |
++------+--------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where roll = 101;
++------+------+-------+
+| roll | name | marks |
++------+------+-------+
+|  101 | ravi |    90 |
++------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> select roll,name  from students where roll = 101;
++------+------+
+| roll | name |
++------+------+
+|  101 | ravi |
++------+------+
+1 row in set (0.01 sec)
+
+mysql> 
