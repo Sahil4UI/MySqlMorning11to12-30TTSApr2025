@@ -1,0 +1,32 @@
+create database joinDemo;
+use joinDemo;
+
+create table employee(
+	emp_id int primary key,
+    name text,
+    address_id int
+);
+
+insert into employee values
+(101,"Sahil",1),
+(102,"Ravi",2),
+(103,"Ram",1),
+(104,"Shiv",3);
+
+create table addresses(
+    address_id int primary key,
+    city text);
+
+insert into addresses values
+(1,"Najafgarh"),
+(2,"Uttam Nagar"),
+(3,"Rajouri garden");
+
+select * from employee;
+select * from addresses;
+
+--  join
+
+select emp_id,name,a.address_id,city from employee as e
+ inner join addresses as a on 
+ e.address_id = a.address_id where emp_id = 101;
